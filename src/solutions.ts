@@ -40,6 +40,8 @@ const processInput = (value: Input): Input =>{
 
 
 
+
+
 type coords  = readonly [latitude: number, longitude: number, locationName: string ];   
 
 const formatCoordinate = (value: coords) : string => {
@@ -55,9 +57,20 @@ const formatCoordinate = (value: coords) : string => {
 
 
 
-// const concatenateArray = <T> (...arrays: T[][]) : T[] =>  {
 
-// }
+const concatenateArrays = <T>(...arrays: T[][]): T[] =>  {
+  
+    const concatenateValue = arrays.reduce((acc , cur)=> {
+        return acc.concat(cur);
+},[])
+    
+    return concatenateValue;
+}
+
+
+
+
+
 
 
 
