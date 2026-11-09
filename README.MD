@@ -3,7 +3,7 @@
 TypeScript the most commonly used language around the world to make every webapp type safe. It mainly build to give JavaScript  some superpower like controlling the type which it is missing for long time and becoming painful for developers , it also help to catch any error or bug on code before the runtime even happen which is why every developers like it and it saves a lot of time for developers from debugging the code on runtime by keeping the code safe and bug free. 
 
 
-# we try to solve some main TypeScript related topic it this assignment.
+# we try to solve some main TypeScript related topic in this assignment.
 
 * Type Narrowing 
 * Union Type
