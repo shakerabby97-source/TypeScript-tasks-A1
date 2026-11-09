@@ -88,11 +88,100 @@ const courses: Course[] = [
   {title: 'node.js', students: 55, isPublished: true}
 ];
 
-const getPopularCourses = (value: Course[], minStudents: number) => {
+const getPopularCourses = (value: Course[], minStudents: number): Course[] => {
 
     const filteredCourse = value.filter((c)=> c.isPublished && c.students >= minStudents)
 
-    return filteredCourse
+    return filteredCourse;
 }
 
-console.log(getPopularCourses(courses, 80))
+
+
+
+
+
+
+
+
+const pluckValues = <T , K extends keyof T>(item: T[], key: K): T[K][] => {
+
+    const values = item.map((i)=> i[key]);
+
+    return values;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class Employee {
+   protected name: string;
+   private baseSalary: number;
+
+   constructor(
+        name: string,
+        baseSalary: number
+   ){
+    this.name = name;
+    this.baseSalary = baseSalary;
+   }
+
+   getDetails(){
+      return  `Employee: ${this.name}, Base Salary: ${this.baseSalary}`
+   }
+
+}
+
+
+class Manager extends Employee {
+
+    constructor (
+        name: string,
+        baseSalary: number,
+        private department: string
+    ){
+        super(name , baseSalary)
+        this.department = department;
+    }
+
+    getRoleInfo(){
+        return `Manager of ${this.department}: ${this.name}`
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+const validateAgeAsync = async(age: number): Promise<string> => {
+   
+
+    return new Promise((resolve, reject)=>{
+        if(age >= 18) {
+            setTimeout(()=>{
+                resolve("Access Granted")
+            },1000)
+    }else {
+        
+        reject ( new Error('Access Denied: Must be 18 or older'))
+    }
+}
+)
+}
+
+
